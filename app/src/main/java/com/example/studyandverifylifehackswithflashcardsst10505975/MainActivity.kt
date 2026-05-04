@@ -73,12 +73,12 @@ fun WelcomeScreen(onStartClick: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Welcome to Hack or Myth!", fontSize = 26.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
+        Text("Welcome to Hack or Myth!", fontSize = 34.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
         Spacer(modifier = Modifier.height(16.dp))
-        Text("Test your knowledge on viral life hacks.", fontSize = 18.sp, textAlign = TextAlign.Center)
+        Text("Test your knowledge on viral life hacks.", fontSize = 26.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
         Spacer(modifier = Modifier.height(40.dp))
         Button(onClick = onStartClick, modifier = Modifier.width(200.dp).height(50.dp)) {
-            Text("Start Quiz")
+            Text("Start Quiz", fontSize = 20.sp )
         }
     }
 }
@@ -98,11 +98,11 @@ fun QuizScreen(onFinish: (Int) -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Question ${currentIndex + 1}/${QuestionRepo.questions.size}", color = Color.Gray)
+        Text("Question ${currentIndex + 1}/${QuestionRepo.questions.size}", color = Color.Black, fontSize =40.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(20.dp))
-        Text(current.statement, fontSize = 22.sp, textAlign = TextAlign.Center, modifier = Modifier.heightIn(min = 100.dp))
+        Text(current.statement, fontSize = 30.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center, modifier = Modifier.heightIn(min = 100.dp))
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
             Button(
@@ -112,8 +112,8 @@ fun QuizScreen(onFinish: (Int) -> Unit) {
                     isAnswered = true
                 },
                 enabled = !isAnswered,
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4CAF50))
-            ) { Text("Hack") }
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4CAF50)), modifier = Modifier.width(130.dp).height(50.dp)
+            ) { Text("Hack", fontSize = 20.sp) }
 
             Button(
                 onClick = {
@@ -122,11 +122,11 @@ fun QuizScreen(onFinish: (Int) -> Unit) {
                     isAnswered = true
                 },
                 enabled = !isAnswered,
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF44336))
-            ) { Text("Myth") }
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF44336)), modifier = Modifier.width(130.dp).height(50.dp)
+            ) { Text("Myth", fontSize = 20.sp) }
         }
 
-        Text(feedback, modifier = Modifier.padding(top = 20.dp), fontWeight = FontWeight.Bold)
+        Text(feedback, modifier = Modifier.padding(top = 20.dp), fontWeight = FontWeight.Bold, fontSize = 20.sp)
 
         if (isAnswered) {
             Button(
@@ -141,7 +141,7 @@ fun QuizScreen(onFinish: (Int) -> Unit) {
                     }
                 }
             ) {
-                Text(if (currentIndex < QuestionRepo.questions.size - 1) "Next Question" else "See Results")
+                Text(if (currentIndex < QuestionRepo.questions.size - 1) "Next Question" else "See Results", fontSize = 20.sp)
             }
         }
     }
@@ -157,16 +157,16 @@ fun ScoreScreen(score: Int, total: Int, onRestart: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Final Score", fontSize = 20.sp)
+        Text("Final Score", fontSize = 50.sp)
         Text("$score / $total", fontSize = 60.sp, fontWeight = FontWeight.ExtraBold)
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = { showReview = true }, modifier = Modifier.fillMaxWidth()) {
-            Text("Review Hacks")
+        Button(onClick = { showReview = true }, modifier = Modifier.fillMaxWidth().height(60.dp)) {
+            Text("Review Hacks", fontSize = 20.sp)
         }
-        OutlinedButton(onClick = onRestart, modifier = Modifier.fillMaxWidth()) {
-            Text("Restart Quiz")
+        OutlinedButton(onClick = onRestart, modifier = Modifier.fillMaxWidth().height(60.dp)) {
+            Text("Restart Quiz", fontSize = 20.sp)
         }
     }
 
