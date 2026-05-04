@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/txtScoreTitle"
+        android:layout_width="141dp"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        android:text="Final Score"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/txtScoreValue"
+        android:layout_width="104dp"
+        android:layout_height="88dp"
+        android:background="@color/white"
+        android:text="0/0"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtPersonalizedMessage"
+        android:layout_width="123dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="Message here"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnReview"
+        android:layout_width="177dp"
+        android:layout_height="84dp"
+        android:background="@color/white"
+        android:text="Review Answers"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/black" />
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="360dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="30dp"
+        android:text="Welcome to Hack or Myth!\nTest your knowledge on viral life hacks."
+        android:gravity="center"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="130dp"
+        android:layout_height="66dp"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:text="Start Quiz" />
+</LinearLayout>
